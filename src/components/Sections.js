@@ -491,18 +491,18 @@ export default function Sections({ activeSection, onContactSubmit }) {
                 </a>
 
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+919322407834"
                   className="flex items-center gap-3 group text-sm text-white hover:text-purple-300 transition-colors"
                   data-interactive
                 >
                   <div className="p-2 rounded-lg bg-purple-950/60 border-2 border-purple-500/30 group-hover:border-purple-400 transition-colors">
                     <Phone className="w-5 h-5 text-purple-400" />
                   </div>
-                  <span className="font-bold text-sm">+91 98765 43210</span>
+                  <span className="font-bold text-sm">+91 93224 07834</span>
                 </a>
 
                 <a
-                  href="https://wa.me/919876543210?text=Hello%20Nikita,%20I%20saw%20your%20cinematic%20portfolio%20and%20would%20love%20to%20connect!"
+                  href="https://wa.me/919322407834?text=Hello%20Nikita,%20I%20saw%20your%20cinematic%20portfolio%20and%20would%20love%20to%20connect!"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 group text-sm text-white hover:text-cyan-300 transition-colors"
