@@ -498,7 +498,7 @@ export default function Sections({ activeSection, onContactSubmit }) {
                 </div>
 
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/nikita-jamodkar-570aa1357?utm_source=share_via&utm_content=profile&utm_medium=member_android"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 group text-sm text-white hover:text-cyan-300 transition-colors"
@@ -508,19 +508,6 @@ export default function Sections({ activeSection, onContactSubmit }) {
                     <LinkedinIcon className="w-5 h-5 text-cyan-400" />
                   </div>
                   <span className="font-bold text-sm">LinkedIn Profile</span>
-                </a>
-
-                <a
-                  href="https://github.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 group text-sm text-white hover:text-purple-300 transition-colors"
-                  data-interactive
-                >
-                  <div className="p-2 rounded-lg bg-purple-950/60 border-2 border-purple-500/30 group-hover:border-purple-400 transition-colors">
-                    <GithubIcon className="w-5 h-5 text-purple-400" />
-                  </div>
-                  <span className="font-bold text-sm">GitHub Node</span>
                 </a>
               </div>
             </motion.div>
