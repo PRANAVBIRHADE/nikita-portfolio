@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Phone, ChevronDown, Award, Briefcase, Code, User, Send, CheckCircle } from "lucide-react";
+import { Mail, Phone, ChevronDown, Award, Briefcase, Code, User, Send, CheckCircle, MessageCircle } from "lucide-react";
 import { useState } from "react";
 
 // Custom SVG Icons to avoid casing/version mismatches in lucide-react exports
@@ -465,14 +465,14 @@ export default function Sections({ activeSection, onContactSubmit }) {
             <div className="h-[3px] w-32 bg-purple-500 mt-4 rounded-full shadow-[0_0_15px_rgba(168,85,247,0.8)]" />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 max-w-4xl mx-auto">
+          <div className="max-w-xl mx-auto w-full">
             {/* Contact details */}
             <motion.div
-              initial={{ x: -30, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
+              initial={{ y: 30, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="md:col-span-5 p-8 rounded-2xl border-2 border-cyan-500/30 bg-[#040409]/95 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.9)] space-y-6"
+              className="p-8 rounded-2xl border-2 border-cyan-500/30 bg-[#040409]/95 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.9)] space-y-6"
             >
               <h3 className="font-mono text-xs text-cyan-400 uppercase tracking-widest mb-4 font-black border-b border-cyan-500/20 pb-1">
                 // NODE DIRECTORY
@@ -490,107 +490,43 @@ export default function Sections({ activeSection, onContactSubmit }) {
                   <span className="font-bold text-xs md:text-sm">nikitajamodkar12@gmail.com</span>
                 </a>
 
-                <div className="flex items-center gap-3 text-sm text-white">
-                  <div className="p-2 rounded-lg bg-purple-950/60 border-2 border-purple-500/30">
+                <a
+                  href="tel:+919876543210"
+                  className="flex items-center gap-3 group text-sm text-white hover:text-purple-300 transition-colors"
+                  data-interactive
+                >
+                  <div className="p-2 rounded-lg bg-purple-950/60 border-2 border-purple-500/30 group-hover:border-purple-400 transition-colors">
                     <Phone className="w-5 h-5 text-purple-400" />
                   </div>
                   <span className="font-bold text-sm">+91 98765 43210</span>
-                </div>
+                </a>
 
                 <a
-                  href="https://www.linkedin.com/in/nikita-jamodkar-570aa1357?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                  href="https://wa.me/919876543210?text=Hello%20Nikita,%20I%20saw%20your%20cinematic%20portfolio%20and%20would%20love%20to%20connect!"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 group text-sm text-white hover:text-cyan-300 transition-colors"
                   data-interactive
                 >
                   <div className="p-2 rounded-lg bg-cyan-950/60 border-2 border-cyan-500/30 group-hover:border-cyan-400 transition-colors">
-                    <LinkedinIcon className="w-5 h-5 text-cyan-400" />
+                    <MessageCircle className="w-5 h-5 text-cyan-400" />
+                  </div>
+                  <span className="font-bold text-sm">WhatsApp Uplink</span>
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/in/nikita-jamodkar-570aa1357?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 group text-sm text-white hover:text-purple-300 transition-colors"
+                  data-interactive
+                >
+                  <div className="p-2 rounded-lg bg-purple-950/60 border-2 border-purple-500/30 group-hover:border-purple-400 transition-colors">
+                    <LinkedinIcon className="w-5 h-5 text-purple-400" />
                   </div>
                   <span className="font-bold text-sm">LinkedIn Profile</span>
                 </a>
               </div>
-            </motion.div>
-
-            {/* Form */}
-            <motion.div
-              initial={{ x: 30, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="md:col-span-7 p-8 rounded-2xl border-2 border-purple-500/30 bg-black/95 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.9)] relative"
-            >
-              {!formSubmitted ? (
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div>
-                    <label className="font-mono text-[10px] uppercase tracking-widest text-cyan-300 font-bold block mb-1.5">
-                      SENDER IDENTIFIER
-                    </label>
-                    <input
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      placeholder="e.g. John Doe"
-                      className="w-full bg-zinc-900 border-2 border-zinc-700 hover:border-zinc-500 focus:border-cyan-400 rounded-lg px-4 py-2.5 text-sm text-white placeholder-zinc-500 outline-none transition-all font-bold"
-                      required
-                      data-interactive
-                    />
-                  </div>
-
-                  <div>
-                    <label className="font-mono text-[10px] uppercase tracking-widest text-purple-300 font-bold block mb-1.5">
-                      DIGITAL MAILBOX ADDRESS
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      placeholder="e.g. sender@domain.com"
-                      className="w-full bg-zinc-900 border-2 border-zinc-700 hover:border-zinc-500 focus:border-purple-400 rounded-lg px-4 py-2.5 text-sm text-white placeholder-zinc-500 outline-none transition-all font-bold"
-                      required
-                      data-interactive
-                    />
-                  </div>
-
-                  <div>
-                    <label className="font-mono text-[10px] uppercase tracking-widest text-cyan-300 font-bold block mb-1.5">
-                      TRANSMISSION PAYLOAD
-                    </label>
-                    <textarea
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      placeholder="Begin system broadcast..."
-                      rows="3"
-                      className="w-full bg-zinc-900 border-2 border-zinc-700 hover:border-zinc-500 focus:border-cyan-400 rounded-lg px-4 py-2.5 text-sm text-white placeholder-zinc-500 outline-none transition-all resize-none font-bold"
-                      required
-                      data-interactive
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="w-full py-3.5 rounded-lg bg-gradient-to-r from-cyan-400 to-purple-600 hover:from-cyan-300 hover:to-purple-500 text-white font-black tracking-widest transition-all flex items-center justify-center gap-2 cursor-pointer shadow-[0_0_20px_rgba(34,211,238,0.3)] hover:scale-[1.01] active:scale-95 text-xs uppercase"
-                    data-interactive
-                  >
-                    <span>Transmit Signal</span> <Send className="w-4 h-4" />
-                  </button>
-                </form>
-              ) : (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="flex flex-col items-center justify-center py-10 text-center"
-                >
-                  <CheckCircle className="w-16 h-16 text-cyan-400 mb-4 animate-bounce" />
-                  <h4 className="text-xl font-black text-white mb-2 tracking-tight">SIGNAL TRANSMITTED</h4>
-                  <p className="text-cyan-200 text-sm max-w-sm font-bold leading-relaxed">
-                    Your transmission was routed successfully. Nikita will establish a handshake shortly.
-                  </p>
-                </motion.div>
-              )}
             </motion.div>
           </div>
         </div>
